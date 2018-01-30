@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My First Object Car</title>
+</head>
+
+<body>
+    <h1>
+        Let's Go Driving!
+    </h1>
+    <h2>
+        <div>Push "d" to drive around town.</div>
+        <div></div>
+        <div>Push "w" to drive around the world.</div>
+        <div></div>
+        <div>Push "t" to get a tune-up.</div>
+        <div></div>
+        <div>Push "h" to honk your horn.</div>
+    </h2>
+    <h3>
+        Open the console to see the stats of the car.
+    </h3>
+    <img src="green-car.png" alt="">
+    <script>
+
+        document.onkeyup = function (event) {
+            var userKey = event.key;
+            if (userKey === "d") {
+                car.driveToWork();
+            }
+            else if (userKey === "w") {
+                car.driveAroundWorld();
+            }
+            else if (userKey === "t") {
+                car.getTuneUp();
+            }
+            else if (userKey === "h") {
+                car.honk();
+            }
+        }
+
+        var car = {
+            make: "Honda",
+            model: "Fit",
+            color: "Blue Raspberry",
+            mileage: 3000,
+            isWorking: true,
+
+            driveToWork: function () {
+
+                alert("Old Mileage: " + this.mileage);
+
+                this.mileage = this.mileage + 8;
+
+                alert("New mileage: " + this.mileage);
+            },
+
+            driveAroundWorld: function () {
+
+                alert("Old Mileage: " + this.mileage);
+
+                this.mileage = this.mileage + 24000;
+
+                alert("New Mileage: " + this.mileage);
+                alert("Car needs a tuneup!");
+
+                this.isWorking = false;
+            },
+
+            getTuneUp: function () {
+                alert("Car is ready to go!");
+                this.isWorking = true;
+            },
+
+            honk: function () {
+                alert("Honk! Honk!");
+            }
+        };
+
+
+        // // How would we log...
+
+        // // The car's make?
+        console.log(car.make);
+        console.log(car.color);
+        // // The car's model?
+        console.log(car.model);
+        // // The car's mileage?
+        console.log(car.mileage);
+        // // How would we run the car's driveToWork method?
+        // car.driveToWork();
+        // // How would we run the car's driveAroundWorld method?
+        // car.driveAroundWorld();
+    </script>
+
+</body>
+
+</html>
